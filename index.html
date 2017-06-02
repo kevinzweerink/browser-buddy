@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Browser Buddy</title>
+</head>
+
+<style>
+	
+	.main {
+		text-align: center;
+	}
+
+	img {
+		display: block;
+		margin: 30px auto;
+	}
+
+</style>
+
+<body>
+
+<script type="text/javascript" src="./dist/main.js"></script>
+<script type="text/javascript">
+var main = bb.dom.div({
+		classes : ['main'],
+		content : "Content"
+	}, 
+		bb.dom.a({
+			classes : ['link'],
+			content: "Click me",
+			props : {
+				href : '#'
+			}
+		},
+			bb.dom.img({
+				props : {
+					src : 'http://placehold.it/1250x400.jpg'
+				}
+			}
+		)
+	)
+);
+
+document.body.appendChild(main);
+</script>
+
+</body>
+</html>
