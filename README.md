@@ -129,7 +129,7 @@ A static set of easing functions. Available easings are:
 
 *Note: I did not make these, they came from here: https://gist.github.com/gre/1650294*
 
-### `Scroll`
+### Scroll
 
 #### `bb.scroll.watch(el, opts)`
 
