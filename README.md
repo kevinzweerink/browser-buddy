@@ -67,6 +67,8 @@ Updates all stable and volatile cache entries.
 
 An alternative to just accessing a value directly via `bb.cache.accessKey`. This can be helpful if you need to delay accessing a cached value until a function is actually run. Like with closures or whatever.
 
+---
+
 ### Animator
 
 #### `bb.animator.start()`
@@ -99,7 +101,7 @@ This will animate a value from 0 to 1 over the duration and easing specified. Yo
 
 For example, you might do this to hide a header element:
 
-```
+```javascript
 var el = document.querySelector('.header');
 bb.animator.animate(2000, bb.animator.easing.easeInOutCubic, function(progress) {
 	var t = progress * -200;
@@ -129,13 +131,15 @@ A static set of easing functions. Available easings are:
 
 *Note: I did not make these, they came from here: https://gist.github.com/gre/1650294*
 
+---
+
 ### Scroll
 
 #### `bb.scroll.watch(el, opts)`
 
 Provide an element, and an options object. Currently the only options you can provide are `topFocusBoundary` and `bottomFocusBoundary`. I will explain those in a minute.
 
-Once you have called `bb.scroll.watch` on an element, you can have that element listen for different scrolling events and react to them! The events you can listen for are:
+Once you have called `bb.scroll.watch`, you can have the element you passed to it listen for different scrolling events and react to them! The events you can listen for are:
 
 * `bb.scroll.enteredViewEventName`: Triggered when an element first enters the viewport.
 * `bb.scroll.inViewEventName`: Triggered when an element is in the viewport, provides a `detail.progress` property on the event indicating how far across the viewport the element has traveled.
@@ -152,7 +156,7 @@ You can define the focus area by providing `topFocusBoundary` (distance from the
 
 If you wanted to show a tooltip for a new thing when that thing enters the middle third of the viewport, here is how you would do it.
 
-```
+```javascript
 var newEl = document.querySelector('.item.new');
 
 bb.scroll.watch(newEl, {
@@ -174,7 +178,7 @@ In my experience, this is totally performant enough to do clean parallax scroll 
 
 E.g.:
 
-```
+```javascript
 var container = document.querySelector('.parallax-container');
 var mover = container.querySelector('img');
 
@@ -194,9 +198,13 @@ Recalculates element positions. Uses `bb.cache` to store them, so if you need to
 
 Checks all watched elements' positions and fires appropriate events.
 
+---
+
 ### Dom
 
 Not gonna bother documenting this right now because it's not very good. I'll try to make a better one later.
+
+---
 
 ### Default Config
 
