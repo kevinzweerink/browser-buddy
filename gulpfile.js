@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var include = require('gulp-include');
 
 gulp.task('build', function () {
-	gulp.src('./src/main.js')
+	gulp.src('./src/bb.js')
 		.pipe(include())
 		.pipe(gulp.dest('./dist/'));
 });

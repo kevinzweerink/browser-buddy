@@ -18,7 +18,12 @@ window.bb = {
 		this.animator.enqueue(this.cache.update);
 		this.animator.enqueuePeriodical(this.cache.refresh);
 		this.animator.enqueue(this.scroll.tick);
-		this.animator.enqueue(this.scroll.refresh);
+		this.animator.enqueue(this.scroll.recalculate);
+		window.addEventListener('resize', function () {
+			console.log('recalculating');
+			bb.cache.refresh();
+			bb.scroll.recalculate();
+		})
 	}
 }
 
